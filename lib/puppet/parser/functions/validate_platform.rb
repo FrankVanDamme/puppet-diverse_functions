@@ -37,7 +37,7 @@ module Puppet::Parser::Functions
     for os in parsed['operatingsystem_support']
         if operatingsystem == os['operatingsystem']
             for release in os['operatingsystemrelease']
-                if operatingsystemrelease == release
+                if operatingsystemrelease.index(release) == 0
                     result = true
                 end
             end
