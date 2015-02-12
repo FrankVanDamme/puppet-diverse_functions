@@ -28,16 +28,16 @@ module Puppet::Parser::Functions
     parsed = JSON.parse(fileContents)
 
     operatingsystem = `facter operatingsystem`.strip
-    lsbdistrelease = `facter lsbdistrelease`.strip
+    operatingsystemrelease = `facter operatingsystemrelease`.strip
 
 #    puts "==#{operatingsystem}=="
-#    puts "==#{lsbdistrelease}=="
+#    puts "==#{operatingsystemrelease}=="
 
     result = false
     for os in parsed['operatingsystem_support']
         if operatingsystem == os['operatingsystem']
             for release in os['operatingsystemrelease']
-                if lsbdistrelease == release
+                if operatingsystemrelease == release
                     result = true
                 end
             end
