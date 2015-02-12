@@ -1,6 +1,6 @@
 {
   "name": "gajdaw-diverse_functions",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "author": "Włodzimierz Gajda",
   "summary": "The module contains various functions like validate_platform()",
   "license": "MIT",
