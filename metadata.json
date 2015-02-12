@@ -11,7 +11,12 @@
     "function",
     "validate_platform",
     "validate",
-    "platform"
+    "platform",
+    "os",
+    "operating system",
+    "operating system release",
+    "release",
+    "distribution"
   ],
   "operatingsystem_support": [
     {
