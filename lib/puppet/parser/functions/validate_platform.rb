@@ -21,17 +21,13 @@ module Puppet::Parser::Functions
       raise(Puppet::ParseError, "Could not find module #{arguments[0]} in environment #{compiler.environment}")
     end
 
-#    puts "==#{local_path}=="
 
     require 'json'
     fileContents = File.read("#{local_path}/metadata.json")
     parsed = JSON.parse(fileContents)
 
-    operatingsystem = `facter operatingsystem`.strip
-    operatingsystemrelease = `facter operatingsystemrelease`.strip
-
-#    puts "==#{operatingsystem}=="
-#    puts "==#{operatingsystemrelease}=="
+    operatingsystem = lookupvar('::operatingsystem')
+    operatingsystemrelease = lookupvar('::operatingsystemrelease')
 
     result = false
     for os in parsed['operatingsystem_support']
